@@ -1,0 +1,38 @@
+#ENV*{bloc_ancre}
+#SET{bornes,#ENV{page_courante}|bornes_pagination{#ENV{nombre_pages},10}}
+#SET{premiere, #GET{bornes}|reset}
+#SET{derniere, #GET{bornes}|end}
+#SET{separateur,#ENV{separateur,'|'}}
+#SET{i,#ENV{page_courante}|moins{1}}
+
+[(#REM)On cherche l'article du contexte]
+
+
+#SET{url_explode,#ENV{url}|explode{/}}
+#SET{count,#GET{url_explode}|count|moins{1}}
+#SET{url_nettoye,#GET{url_explode}|table_valeur{#GET{count}}}
+#SET{url_explode2,#GET{url_nettoye}|explode{?}}
+#SET{url,#GET{url_explode2}|table_valeur{0}}
+
+
+<BOUCLE_url_article(spip_urls){url LIKE %#GET{url}%}{type=article}{0,1}>
+	<BOUCLE_rub(ARTICLES){id_article=#ID_OBJET}{0,1}>
+	[(#ENV{page_courante}|=={1}|oui)<a class="lien_pagination_rubrique no-ajax nofollow" href="#URL_RUBRIQUE"><</a>]	
+	</BOUCLE_rub>
+</BOUCLE_url_article>
+
+
+
+[(#ENV{page_courante}|>{1}|oui)
+	[(#SET{item, #ENV{page_courante}|moins{2}|mult{#ENV{pas}} })]
+	[(#ENV{url}|parametre_url{#ENV{debut},#GET{item}|?{#GET{item}}}|ancre_url{#ENV{ancre}}|lien_ou_expose{<,#ENV{page_courante}|=={1},lien_pagination,'',nofollow})]
+
+	[(#ENV{page_courante}|<{#ENV{nombre_pages}}|oui)
+		[<span class='sep separateur'>(#GET*{separateur})</span>]
+	]
+]
+[(#ENV{page_courante}|<{#ENV{nombre_pages}}|oui)
+	[(#SET{item, #ENV{page_courante}|mult{#ENV{pas}} })]
+	[(#ENV{url}|parametre_url{#ENV{debut},#GET{item}|?{#GET{item}}}|ancre_url{#ENV{ancre}}|lien_ou_expose{>,#ENV{page_courante}|=={#ENV{nombre_pages}},lien_pagination,'',nofollow})]
+]
+

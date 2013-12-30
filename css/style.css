@@ -1,0 +1,312 @@
+/* --------------------------------------------------------------
+
+   style.css
+   Habillage distroy - romy.tetue.net - 2011
+
+-------------------------------------------------------------- */
+
+@font-face {
+    font-family: 'CorbelRegular';
+    src: url('corbel-webfont.eot');
+    src: url('corbel-webfont.eot?#iefix') format('embedded-opentype'),
+         url('corbel-webfont.woff') format('woff'),
+         url('corbel-webfont.ttf') format('truetype'),
+         url('corbel-webfont.svg#') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*typo su site*/
+
+body { font-family: 'WebFont', Arial, sans-serif; background-color:#FFFFFF; background-image:none;}
+
+h1,h2{font-size:0.9em;}
+
+h2 {font-weight:bold}
+
+.content {font-size: 0.9em;}
+
+/* Les Blocs*/
+.page{width:1000px;}
+.wrapper{float:right;border-left: 0px solid; border-color:#1d1d1d; width:75%}
+.aside{float:right; width:20%;}
+.footer{border-top:0;}
+
+/* ------------------------------------------
+/* Habillage des elements du contenu
+/* ------------------------------------------ */
+
+
+
+.header{border-bottom:0}
+
+.header #logo{margin-left:23%}
+
+.footer {text-align:center;}
+ 
+.footer .colophon{width:100%}
+
+.arbo { clear: both; font-size: .9em; color: #DDC; }
+.arbo * { font-weight: normal; }
+
+.cartouche { margin-bottom: 1.5em; }
+.cartouche h1 { margin-bottom: 0; }
+.cartouche p { margin-bottom: 0; }
+.surtitre{}
+.soustitre {}
+abbr.published { border: 0; }
+@media print {
+	abbr[title].published:after { content: ""; }
+	abbr[title].dtreviewed:after { content: ""; }
+}
+.info-publi { margin: 1.5em 0 0; font-size: .9em; font-style: italic; }
+.traductions { font-size: .9em; }
+.traductions a[hreflang]:after { content: ''; }
+
+.chapo { font-weight: bold; }
+.texte {}
+.hyperlien { display: block; padding: 1.5em 50px; background: #EED url(img/def.png) no-repeat 25px 1.9em; font-weight: bold; }
+.ps, .notes { margin-bottom: 1.5em; }
+.notes { clear: both; font-size: .9em; }
+.dsjcycle{text-align:center; float:left}
+/* Listes et tableaux */
+dl.spip dt { background: url(img/def.png) no-repeat 25px .5em; }
+dl.spip dd {}
+
+.agenda dd{margin-bottom:0; line-height:normal}
+
+table.spip caption {  background: none; border-bottom: 1px solid; text-align: left; font-weight: bold; }
+table.spip thead th { background: none; border: 1px solid; border-width: 1px 0; }
+table.spip tbody tr th,
+table.spip tr td { background: none; }
+table.spip tbody tr.odd th,
+table.spip tr.odd td { background: #F5F5F5; }
+table.spip tfoot { border-top: 1px solid; }
+table.spip th, table.spip td {min-width:90px; width: auto; padding:0.5em}
+
+/* Citations */
+blockquote { min-height: 40px; background: url(img/quote.png) no-repeat; }
+pre, div.spip_code, .spip_cadre { padding: 1.5em 50px; }
+pre, code, kbd, samp, var, tt, .spip_code, .spip_cadre { font-family: 'Courier New', Courier, monospace; }
+pre, code, samp, var, tt, .spip_code, .spip_cadre { background-color: #EED; }
+.spip_cadre { width: 100%; padding-right: 0; padding-bottom: 0; border: 0; overflow: scroll; }
+
+.texteencadre-spip {
+    border-width: 0px 0px 0px 0px;
+	background: none repeat scroll 0 0 #EEEEEE;
+	z-index:-1;
+}
+#documents_galerie,#documents_album{width:210px;}
+
+
+#documents_galerie,#documents_album li{float:left;margin-bottom:10px}
+#documents_album a {
+	padding:0;
+    height: 60px;
+    width: 60px;
+    overflow:hidden,
+    }
+.legende{ padding-top:50px;clear:left;font-size:0.9em;}
+
+.legende .titel{font-weight:bold;}
+
+.bild{float:right;}
+
+
+table.evenements{width:100%;}
+
+
+td{
+    padding: 0.5em 0;
+    height:0.1em;
+    width:50px;
+}
+table.evenements td.date{width:5%}
+table.evenements td.titre{width:30%}
+table.evenements td.descriptif{width:65%}
+
+
+.aside dl dt,.aside span{font-size:0.9em;}
+
+ul.menu li{float:left;position:relative;}
+
+.mouseover_cache{display:none;}
+a:hover span.mouseover_cache{
+	display:table-cell; 
+	text-align:center;
+	vertical-align:middle;
+	position:absolute; 
+	width:60px;
+	height:60px;
+	height:60px;
+	z-index:100;
+	color:#4D4D4D;
+	}
+a:hover .mouseover_visible{
+
+	width: 60px; 
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+	filter: alpha(opacity=20);
+	opacity: 0.2;
+	}
+
+/* Formulaires : variantes et cas particuliers
+----------------------------------------------- */
+.formulaire_spip { margin-bottom: 1.5em; }
+.aside .formulaire_spip { padding-top: 1.3em; border-top: 5px solid; }
+fieldset {
+width: 100%; margin: 0;
+-ms-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box; }
+legend { display: none; }
+label { display: block; }
+.erreur_message { display: block; }
+input[type="search"] { /* supprimer pour que webkit ajoute le bouton effacer dans le champ */
+-webkit-appearance: textfield;
+}
+input.text, textarea {
+width: 100%;
+-ms-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+background-color: #EED;
+border: 4px solid #EED;
+}
+.content input.text { width: 50%; }
+textarea { width: 100%; }
+
+/* Selection des langues */
+.formulaire_menu_lang { margin: 0; padding: 0; background: none; }
+
+/* Formulaires de recherche (site / petitions) */
+.formulaire_recherche label { display: block; font-size: 90%;  }
+.formulaire_recherche input.text { width: 10em; min-height: 28px; border: 0; }
+.formulaire_recherche input.submit {
+background: #EED  url(img/bouton_recherche.png) no-repeat center center;
+border: 0;
+border-left: 1px solid #d9d9b3; 
+color: #EED;
+}
+.formulaire_recherche input.submit:hover,
+.formulaire_recherche input.submit:focus { background-color: #d9d9b3; }
+#formulaire_recherche * { vertical-align: middle; }
+
+/* Choix des mots-clefs */
+ul.choix_mots { display: block; margin: 0; padding: 0; list-style: none; }
+ul.choix_mots li { clear: none; float: left; display: block; width: 30%; padding: 1%; }
+ul.choix_mots li label { display: inline; font-weight: normal; }
+
+.formulaire_spip .bugajaxie { display: none; } /*IE/Win*/
+
+/* Formulaire de login dans une page */
+.formulaire_login ul li { clear: left; }
+.formulaire_login .editer_password .details { display: block; }
+.formulaire_login #spip_logo_auteur { float: right; }
+
+/* Fomulaire de contact */
+.formulaire_ecrire_auteur {}
+.formulaire_ecrire_auteur .saisie_sujet_message_auteur input.text { width: 100%; }
+
+/* Habillage des forums
+---------------------------------------------- */
+
+/* Habillage des forums */
+.comment-fil ul {}
+.comment-meta { margin: 0; font-weight: bold; }
+.comment-meta small { font-size: 100%; }
+.comment-meta abbr { border: 0; }
+.comment-meta a { color: #222; }
+.comment-meta a:focus,
+.comment-meta a:hover,
+.comment-meta a:active { color: #fff; }
+.comment-content .hyperlien { padding: 0; background: transparent; font-weight: normal; }
+
+/* Formulaire de forum */
+.formulaire_forum {}
+.formulaire_forum legend { display: none; }
+.formulaire_forum .saisie_titre input.text { width: 100% }
+.formulaire_forum .session_qui { display: none; }
+.formulaire_forum .saisie_texte .explication { font-size: .9em; font-style: italic; }
+
+/* Habillage des petitions
+---------------------------------------------- */
+#signatures {}
+#signatures td.signature-date small { white-space: nowrap; }
+#signatures .formulaire_recherche { margin: 1.5em auto; text-align: center; }
+
+/* Formulaire de signature */
+.formulaire_signature {}
+
+/* ------------------------------------------
+/* Sous-navigation et autres menus
+/* ------------------------------------------ */
+
+/* Habillage general des menus de nav */
+.menu { clear: both; margin-bottom: 1.5em; text-align: left; }
+.menu p {}
+.menu ul { margin-bottom: 1.5em; }
+.menu ul li {list-style:none}
+.menu ul li ul { margin-left: 1.2em; list-style: circle; }
+
+/* Pagination */
+.pagination, .pagination2 {
+    clear: left;
+    text-align: center;
+    width:95%;
+    
+}
+
+.pagination a,
+.pagination .on  { padding: .2em .5em; margin: 0 1px; }
+.pagination a {text-decoration: none; display:none}
+.pagination a.lien_pagination, .pagination a.lien_pagination_rubrique{display:inline}
+.pagination .on { font-weight: bold; background: #222; color: #fff; }
+.pagination .sep { display: none; }
+
+/* Listes d'articles et extraits introductifs */
+.menu_articles li { clear: both; margin-bottom: 1.5em; }
+.menu_articles li h3,
+.menu_articles li h2 { margin: 0; }
+.menu_articles li p { margin: 0; }
+.menu_articles li small { font-style: italic; }
+.menu_articles li .enclosures { float: right; text-align: right; max-width: 60%; margin: 0; }
+
+.menu_breves li {}
+.menu_breves li h3 { margin: 0; }
+
+
+
+/* Hyperliens
+---------------------------------------------- */
+a {font-size:0.9em; color: #1d1d1d; text-decoration: none; }
+a:focus,
+a:hover,
+a:active {font-size:0.9em;  color: #7C7C7C; text-decoration: none; }
+a.on{font-size:0.9em; font-weight:normal;color: #7C7C7C}
+.bild a:hover, .bild a:active, .bild a:focus{background-color:transparent}
+
+
+/* ------------------------------------------
+/* Autres medias
+/* ------------------------------------------ */
+
+@media print {
+
+/*  Ne pas imprimer */
+.spip-admin,
+.spip-admin-float,
+.spip-previsu { display: none; }
+.repondre,
+.formulaire_spip { display: none; }
+
+/* Souligner et expliciter les liens */
+a { color: #600; text-decoration: underline !important; }
+a.spip_out:after,
+a.spip_glossaire:after,
+a.spip_mail:after { display: inline; content: " [" attr(href) "]"; }
+
+}
+
+/* end */
