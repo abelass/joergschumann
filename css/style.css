@@ -309,4 +309,19 @@ a.spip_mail:after { display: inline; content: " [" attr(href) "]"; }
 
 }
 
-/* end */
+@media only screen and (max-width: 650px) {
+	.wrapper, .aside{width:100%; float:none;clear:both}
+	
+	.content{min-height:100%; margin-bottom:1em}
+	
+	.aside{padding-top:1em}
+	
+	.bild { float: none;}
+	
+	#documents_galerie, #documents_album {width: 100%;}
+	
+	.legende {
+	    padding-top: 0;
+	}
+		
+}

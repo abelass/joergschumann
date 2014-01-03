@@ -23,10 +23,10 @@
 	[(#ID_SECTEUR|non)
 		[(#GET{pagination}|=={non}|oui)<p class="pagination2"><a class="lien_pagination_rubrique no-ajax nofollow" href="#URL_RUBRIQUE{#ID_RUB}"><</a></p>]
 	]
-	<div class="legende">
+	[<div class="legende">
 		<div class="titel">#GET{titre}</div>
-		<div class="beschreibung">#GET{descriptif}</div>
-	</div>
+		<div class="beschreibung">(#GET{descriptif})</div>
+	</div>]
 </div><!--#documents_portfolio-->
 </B_documents_portfolio>
 
