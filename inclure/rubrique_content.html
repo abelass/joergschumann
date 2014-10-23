@@ -1,0 +1,44 @@
+		[(#REM) Contenu principal : contenu de la rubrique ]
+		<div class="wrapper">
+		<div class="content" id="content">
+
+
+			<div class="cartouche">
+				<h1 class="#EDIT{titre}">[(#LOGO_RUBRIQUE|image_reduire{130,*}) ]</h1>
+			</div>
+	
+			[<div class="#EDIT{texte} texte">(#TEXTE)</div>]
+	
+	
+	
+			[(#ID_PARENT|=={1}|oui)#SET{doc,non}
+			[(#INCLURE{fond=inclure/rubrique_galerie,id_rubrique,env})]
+			]
+	
+			[(#REM) Gestion du portfolio et des documents ]
+			[(#GET{doc}|non)
+			[(#INCLURE{fond=inclure/documents,id_rubrique, env,ajax})]
+			]
+			[(#REM) Rubrik Kontakt]
+			[(#ID_RUBRIQUE|=={10}|oui)
+			<INCLURE{fond=inclure/formulaire_auteur}/>
+			]
+			
+			<INCLURE{fond=inclure/articles_evenements,id_rubriqu}/>
+	
+			[<div class="notes"><hr />(#NOTES)</div>]
+			
+
+	
+		</div><!--.content-->
+		</div><!--.wrapper-->
+	
+		<div class="aside">
+	
+			<INCLURE{fond=inclure/rubriques,env,id_rubrique} />
+
+	
+			[(#REM) Proposer un site ]
+			#FORMULAIRE_SITE
+			
+		</div><!--.aside-->	

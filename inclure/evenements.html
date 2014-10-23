@@ -1,0 +1,15 @@
+
+<B_evenements>
+	<table class="evenements">
+		<tbody>
+<BOUCLE_evenements(EVENEMENTS){id_article} {!par date_debut}>
+	<tr>
+	<td>[(#DATE_DEBUT|affdate{Y})]</td>	
+	<td>#TITRE</td>
+	[<td>(#DESCRIPTIF**)</td>]
+	[<td>(#LIEU)</td>]
+	</tr>
+</BOUCLE_evenements>
+		</tbody>
+	</table>
+</B_evenements>

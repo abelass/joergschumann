@@ -1,0 +1,16 @@
+#SET{date,#DATE}
+<BOUCLE_articles(ARTICLES){id_rubrique} {par num titre, titre}>	
+	<B_evenements>
+	<table class="evenements spip">
+		<tbody>
+	<BOUCLE_evenements(EVENEMENTS){statut=publie}{id_article}{date_fin<=#GET{date}}{!par date_debut}{tout}>
+		<tr class="[(#COMPTEUR_BOUCLE|alterner{row_even even,row_odd odd})]">
+		<td class="#EDIT{date_debut} surlignable date">[(#DATE_DEBUT|affdate{Y})]</td>	
+		<td class="#EDIT{titre} surlignable titre">#TITRE</td>
+		<td class="surlignable descriptif">[<span class="#EDIT{descriptif}">(#DESCRIPTIF**)</span>][, <span class="#EDIT{lieu}">(#LIEU)</span>]</td>
+		</tr>
+	</BOUCLE_evenements>
+			</tbody>
+		</table>
+	</B_evenements>
+</BOUCLE_articles>

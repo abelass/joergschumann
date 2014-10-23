@@ -1,0 +1,76 @@
+[(#REM) Portfolio : album d'images ]
+[(#REM) Portfolio : album d'images ]
+
+<BOUCLE_afficher_document(DOCUMENTS) {id_document}{extension IN png,jpg,gif}>
+	[<div class="bild"><a type="#MIME_TYPE" href="#URL_DOCUMENT">(#FICHIER|image_reduire{500,*})</a></div>]
+	#SET{titre,#TITRE}
+	#SET{descriptif,#DESCRIPTIF}
+</BOUCLE_afficher_document>
+
+<B_documents_portfolio>
+<div class="bloc clearfix" id="documents_galerie">
+	<ul>
+		<BOUCLE_documents_portfolio(DOCUMENTS) {id_rubrique ?} {mode ?}{extension IN png,jpg,gif} {par titre}{doublons}{tout}{pagination 9}>
+		<li>
+			<a class="ajax" href="[(#SELF|parametre_url{id_document,#ID_DOCUMENT})]" [ title="(#TITRE|attribut_html|couper{80})"]>[(#FICHIER
+			|image_passe_partout{60,60}
+			|image_recadre{60,60}
+			|inserer_attribut{class,spip_logos}
+			|inserer_attribut{alt,[(#TITRE|attribut_html|couper{80})]})]
+			</a>
+		</li>
+		</BOUCLE_documents_portfolio>
+	</ul>
+	[<p class="pagination">(#PAGINATION{precedent_suivant_symbole})</p>]
+	[<div class="legende">
+		<div class="titel">(#GET{titre})</div>
+		<div class="beschreibung">#GET{descriptif}</div>
+	</div>]
+</div><!--#documents_portfolio-->
+</B_documents_portfolio>
+#SET{annecourante,#DATE|annee}
+
+
+<B_article_annees1>
+	<ul class="menu annee">
+	<BOUCLE_article_annees1(ARTICLES){id_rubrique}{!par date}{0,1}{doublons}>#SET{date,#DATE} #SET{annee,#DATE|annee}
+		<INCLURE{fond=inclure/inc-rubrique_galerie,titre_article=#TITRE,id_rubrique,id_article,env,annee=#GET{annee}}/>
+	</BOUCLE_article_annees1>			
+	#SET{fin_menu_annee,</ul>}
+</B_article_annees1>	
+<B_article_annees2>	
+	<BOUCLE_article_annees2(ARTICLES){id_rubrique}{annee_relatif>0}{!par date}{0,1}{doublons}>#SET{date,#DATE}#SET{date,#DATE} #SET{annee,#DATE|annee}
+		<INCLURE{fond=inclure/inc-rubrique_galerie,titre_article=#TITRE,id_rubrique,id_article,env,annee=#GET{annee}}/>
+		<BOUCLE_rec(BOUCLE_article_annees2)></BOUCLE_rec>
+	</BOUCLE_article_annees2>			
+</B_article_annees2>			
+
+#GET{fin_menu_annee}
+
+
+<B_articles>
+	<div class="bloc clearfix" id="documents_album">
+	<ul>
+<BOUCLE_articles(ARTICLES){id_rubrique}{annee}{pagination 9}>#SET{titre,#TITRE}
+
+<B_documents_portfolio2>
+		<BOUCLE_documents_portfolio2(DOCUMENTS) {id_article} {mode ?}{extension IN png,jpg,gif} {par hasard}{doublons}{tout}{0,1}>[
+		<li[(#COMPTEUR_BOUCLE|modulo{4}|=={0}|oui) class="nettoyeur"]>
+			<a href="(#URL_ARTICLE)" [ title="(#GET{titre}|attribut_html|couper{80})"]>
+			[<span class="mouseover_cache">(#GET{titre})</span>]
+			[(#FICHIER
+			|image_passe_partout{60,60}
+			|image_recadre{60,60}
+			|inserer_attribut{class,spip_logos mouseover_visible}
+			|inserer_attribut{alt,[(#TITRE|attribut_html|couper{80})]})]		
+			</a>
+		</li>
+		]</BOUCLE_documents_portfolio2>
+
+</B_documents_portfolio2>
+</BOUCLE_articles>
+	</ul>
+	[<p class="pagination">(#PAGINATION{precedent_suivant_symbole})</p>]
+</div><!--#documents_album-->
+</B_articles>
+
