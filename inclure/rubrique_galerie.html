@@ -1,5 +1,4 @@
 [(#REM) Portfolio : album d'images ]
-[(#REM) Portfolio : album d'images ]
 
 <BOUCLE_afficher_document(DOCUMENTS) {id_document}{extension IN png,jpg,gif}>
 	[<div class="bild"><a type="#MIME_TYPE" href="#URL_DOCUMENT">(#FICHIER|image_reduire{500,*})</a></div>]
