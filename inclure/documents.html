@@ -54,7 +54,7 @@
 	<div class="menu" id="documents_joints">
 		<h2><:medias:titre_documents_joints:></h2>
 		<ul class="spip">
-			<BOUCLE_documents_joints(DOCUMENTS){id_article ?} {id_rubrique ?}{id_evenement ?} {extension !IN gif,jpg,png,mp3,mp4} {vu=non}{par num titre, date}>[
+			<BOUCLE_documents_joints(DOCUMENTS){id_article ?} {id_rubrique ?}{id_evenement ?} {extension !IN gif,jpg,png,mp3} {vu=non}{par num titre, date}>[
 			<li>
 				<a href="(#URL_DOCUMENT)" type="#MIME_TYPE" class="spip_doc[ (#EXTENSION|attribut_html)]"><strong class="#EDIT{titre} titre">[(#TITRE|sinon{[(#FICHIER|basename|couper{80})]})]</strong>
 				<small class="info_document">([<abbr title="<:info_document:> #TYPE_DOCUMENT" class="ext">(#EXTENSION|strtoupper)</abbr> - ][<span>(#TAILLE|taille_en_octets)</span>])</small></a>
@@ -68,9 +68,9 @@
 		<div class="menu" id="documents_joints">
 
 			<ul class="spip">
-				<BOUCLE_audio(DOCUMENTS){id_article ?} {id_rubrique ?}{id_evenement ?} {extension IN mp3,mp4} {vu=non}{par num titre, date}>
+				<BOUCLE_audio(DOCUMENTS){id_article ?} {id_rubrique ?}{id_evenement ?} {extension IN mp3} {vu=non}{par num titre, date}>
 				<li>
-					<h3>[(#TITRE|sinon{[(#FICHIER|basename|couper{80})]})]</h3>
+					<h2>[(#TITRE|sinon{[(#FICHIER|basename|couper{80})]})]</h2>
 					<INCLURE{fond=modeles/audio,id=#ID_DOCUMENT}/>	<br/>
 				</li>
 				</BOUCLE_audio>
