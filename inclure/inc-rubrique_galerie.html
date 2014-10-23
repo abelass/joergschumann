@@ -15,7 +15,7 @@
 		<//B_arts_annee>				
 	</li>
 </BOUCLE_docs>
-	[(#REM)A]
+	[(#REM)Audio]
 	<BOUCLE_audio(DOCUMENTS) {id_article} {mode ?}{extension IN mp3,mp4} {par hasard}{doublons}{tout}{0,#ENV{afficher,1}}>
 		#SET{image,#LOGO_DOCUMENT|image_passe_partout{60,60}|image_recadre{60,60}|inserer_attribut{class,spip_logos mouseover_visible}|inserer_attribut{alt,#TITRE|attribut_html|couper{80}}}
 		<li>

@@ -27,6 +27,15 @@
 	</div>]
 </div><!--#documents_portfolio-->
 </B_documents_portfolio>
+	[(#REM)Audio]
+	<BOUCLE_audio(DOCUMENTS) {id_rubrique} {mode ?}{extension IN mp3} {par hasard}{doublons}{tout}>
+		#SET{image,#LOGO_DOCUMENT|image_passe_partout{60,60}|image_recadre{60,60}|inserer_attribut{class,spip_logos mouseover_visible}|inserer_attribut{alt,#TITRE|attribut_html|couper{80}}}
+		<li>
+			<h2>[(#TITRE|sinon{[(#FICHIER|basename|couper{80})]})]</h2>
+			<INCLURE{fond=modeles/audio,id=#ID_DOCUMENT}/>	<br/>				
+		</li>
+	</BOUCLE_audio>
+<//B_documents_portfolio>
 #SET{annecourante,#DATE|annee}
 
 
