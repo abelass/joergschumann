@@ -1,10 +1,39 @@
 [(#REM) Portfolio : album d'images ]
 
-<BOUCLE_afficher_document(DOCUMENTS) {id_document}{extension IN png,jpg,gif}>
-	[<div class="bild"><a type="#MIME_TYPE" href="#URL_DOCUMENT">(#FICHIER|image_reduire{500,*})</a></div>]
-	#SET{titre,#TITRE}
-	#SET{descriptif,#DESCRIPTIF}
-</BOUCLE_afficher_document>
+
+#SET{documents, #ARRAY}
+<BOUCLE_docs(DOCUMENTS) {id_rubrique ?} {mode ?}{extension IN png,jpg,gif} {par titre}{tout}>
+	#SET{documents, #GET{documents}|push{#ID_DOCUMENT}}
+</BOUCLE_docs>
+
+#SET{doc_switched, #GET{documents}|array_flip}
+
+	<BOUCLE_afficher_document(DOCUMENTS) {id_document}{extension IN png,jpg,gif}>
+	#SET{position_courante,#GET{doc_switched}|table_valeur{#ID_DOCUMENT}}
+
+	<B_avant>
+	<div class="bild">
+	<BOUCLE_avant(DOCUMENTS){id_document = #GET{documents}|table_valeur{#GET{position_courante}|moins{1}}} {tout}>
+		<div class="pfeil links">
+			<a class="ajax" 
+				href="[(#SELF|parametre_url{id_document,#ID_DOCUMENT})]" 
+				[ title="(#TITRE|attribut_html|couper{80})"]> < </a>
+			</div>
+	</BOUCLE_avant>	
+			[<a type="#MIME_TYPE" href="#URL_DOCUMENT">(#FICHIER|image_reduire{500,*})</a>]
+		
+	<BOUCLE_apres(DOCUMENTS){id_document = #GET{documents}|table_valeur{#GET{position_courante}|plus{1}}} {tout}>
+		<div class="pfeil rechts">
+			<a class="ajax" 
+				href="[(#SELF|parametre_url{id_document,#ID_DOCUMENT})]" 
+				[ title="(#TITRE|attribut_html|couper{80})"]> > </a>
+		</div>
+	</BOUCLE_apres>
+		#SET{titre,#TITRE}
+		#SET{descriptif,#DESCRIPTIF}
+	</BOUCLE_afficher_document>
+	</div>
+	</B_avant>
 
 <B_documents_portfolio>
 <div class="bloc clearfix" id="documents_galerie">
@@ -20,6 +49,8 @@
 		</li>
 		</BOUCLE_documents_portfolio>
 	</ul>
+	
+
 	[<p class="pagination">(#PAGINATION{precedent_suivant_symbole})</p>]
 	[<div class="legende">
 		<div class="titel">(#GET{titre})</div>

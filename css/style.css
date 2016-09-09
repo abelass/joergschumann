@@ -110,7 +110,24 @@ pre, code, samp, var, tt, .spip_code, .spip_cadre { background-color: #EED; }
 
 .legende .titel{font-weight:bold;}
 
-.bild{float:right;}
+.pfeil{
+  position: absolute;
+  font-size: 2em;
+  top:50%;
+  }
+  
+.rechts{
+    right: -2em;
+  }
+  
+.links{
+    left: -2em;
+  }
+
+.bild{
+  position: relative;
+  float:right;
+  }
 
 
 table.evenements{width:100%;}
