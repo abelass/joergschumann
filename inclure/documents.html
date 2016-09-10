@@ -1,17 +1,42 @@
 [(#REM) Portfolio : album d'images ]
 
+#SET{documents, #ARRAY}
+<BOUCLE_docs(DOCUMENTS) {id_rubrique ?}  {id_article ?} {mode ?}{extension IN png,jpg,gif} {par titre}{tout}>
+	#SET{documents, #GET{documents}|push{#ID_DOCUMENT}}
+</BOUCLE_docs>
 
+#SET{doc_switched, #GET{documents}|array_flip}
+
+<B_afficher_document>
+<div class="bild">
 <BOUCLE_afficher_document(DOCUMENTS) {id_document}{extension IN png,jpg,gif}>
-	[<div class="bild"><a type="#MIME_TYPE" href="#URL_DOCUMENT">(#FICHIER|image_reduire{500,*})</a></div>]
+	#SET{position_courante,#GET{doc_switched}|table_valeur{#ID_DOCUMENT}}
+	<BOUCLE_avant(DOCUMENTS){id_document = #GET{documents}|table_valeur{#GET{position_courante}|moins{1}}} {tout}>
+		<div class="pfeil links">
+			<a class="ajax" 
+				href="[(#SELF|parametre_url{id_document,#ID_DOCUMENT})]" 
+				[ title="(#TITRE|attribut_html|couper{80})"]> < </a>
+		</div>
+	</BOUCLE_avant>	
+	[<a type="#MIME_TYPE" href="#URL_DOCUMENT">(#FICHIER|image_reduire{500,*})</a>]
+	<BOUCLE_apres(DOCUMENTS){id_document = #GET{documents}|table_valeur{#GET{position_courante}|plus{1}}} {tout}>
+		<div class="pfeil rechts">
+			<a class="ajax" 
+				href="[(#SELF|parametre_url{id_document,#ID_DOCUMENT})]" 
+				[ title="(#TITRE|attribut_html|couper{80})"]> > </a>
+		</div>
+	</BOUCLE_apres>
 	#SET{titre,#TITRE}
 	#SET{descriptif,#DESCRIPTIF}
 </BOUCLE_afficher_document>
+</div>
+</B_afficher_document>
 
 <B_documents_portfolio>
 <div class="bloc clearfix" id="documents_galerie">
 	<ul>
 		<BOUCLE_documents_portfolio(DOCUMENTS) {id_article ?} {id_rubrique ?} {id_evenement ?}{mode ?}{extension IN png,jpg,gif} {par num titre, date}{doublons}{tout}{pagination 9}>
-		<li><a class="ajax" href="[(#SELF|parametre_url{id_document,#ID_DOCUMENT})]" [ title="(#TITRE|attribut_html|couper{80})"]>[(#FICHIER
+		<li[ class="(#EXPOSE)"]><a class="ajax" href="[(#SELF|parametre_url{id_document,#ID_DOCUMENT})]" [ title="(#TITRE|attribut_html|couper{80})"]>[(#FICHIER
 			|image_passe_partout{60,60}
 			|image_recadre{60,60}
 			|inserer_attribut{class,spip_logos}
