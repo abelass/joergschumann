@@ -251,8 +251,7 @@ pre, code, samp, var, tt, .spip_code, .spip_cadre {
 
 	}
 #documents_galerie li.on {
-	border: 3px solid #1d1d1d;
-	margin: -3px;
+	opacity: 0.1;
 	}
 
 #documents_album a {
