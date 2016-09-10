@@ -57,6 +57,7 @@ h2 {
 /* ------------------------------------------
 /* Habillage des elements du contenu
 /* ------------------------------------------ */
+.invisible {display:none}
 .header {
 	border-bottom: 0
 }
