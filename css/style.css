@@ -240,9 +240,20 @@ pre, code, samp, var, tt, .spip_code, .spip_cadre {
 }
 
 #documents_galerie, #documents_album li {
-	float: left;
-	margin-bottom: 10px
+	display: inline-block;
+	margin: 10px;
 }
+
+#documents_galerie li {
+	display: inline-block;
+	width: 60px;
+	height: 60px;
+
+	}
+#documents_galerie li.on {
+	border: 3px solid #1d1d1d;
+	margin: -3px;
+	}
 
 #documents_album a {
 	padding: 0;
@@ -262,9 +273,11 @@ pre, code, samp, var, tt, .spip_code, .spip_cadre {
 }
 
 .pfeil {
+	background-color:rgba(255, 255, 255, 0.2);
 	position: absolute;
 	font-size: 2em;
 	top: 50%;
+	padding:2px;
 }
 
 .rechts {

@@ -8,17 +8,16 @@
 
 #SET{doc_switched, #GET{documents}|array_flip}
 
+	<B_afficher_document>
+	<div class="bild">
 	<BOUCLE_afficher_document(DOCUMENTS) {id_document}{extension IN png,jpg,gif}>
 	#SET{position_courante,#GET{doc_switched}|table_valeur{#ID_DOCUMENT}}
-
-	<B_avant>
-	<div class="bild">
 	<BOUCLE_avant(DOCUMENTS){id_document = #GET{documents}|table_valeur{#GET{position_courante}|moins{1}}} {tout}>
 		<div class="pfeil links">
 			<a class="ajax" 
 				href="[(#SELF|parametre_url{id_document,#ID_DOCUMENT})]" 
 				[ title="(#TITRE|attribut_html|couper{80})"]> < </a>
-			</div>
+		</div>
 	</BOUCLE_avant>	
 			[<a type="#MIME_TYPE" href="#URL_DOCUMENT">(#FICHIER|image_reduire{500,*})</a>]
 		
@@ -33,13 +32,13 @@
 		#SET{descriptif,#DESCRIPTIF}
 	</BOUCLE_afficher_document>
 	</div>
-	</B_avant>
+	</B_afficher_document>
 
 <B_documents_portfolio>
 <div class="bloc clearfix" id="documents_galerie">
 	<ul>
 		<BOUCLE_documents_portfolio(DOCUMENTS) {id_rubrique ?} {mode ?}{extension IN png,jpg,gif} {par titre}{doublons}{tout}{pagination 9}>
-		<li>
+		<li[ class="(#EXPOSE)"]>
 			<a class="ajax" href="[(#SELF|parametre_url{id_document,#ID_DOCUMENT})]" [ title="(#TITRE|attribut_html|couper{80})"]>[(#FICHIER
 			|image_passe_partout{60,60}
 			|image_recadre{60,60}
