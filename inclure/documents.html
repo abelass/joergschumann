@@ -1,7 +1,7 @@
 [(#REM) Portfolio : album d'images ]
 
 #SET{documents, #ARRAY}
-<BOUCLE_docs(DOCUMENTS) {id_rubrique ?}  {id_article ?} {mode ?}{extension IN png,jpg,gif} {par titre}{tout}>
+<BOUCLE_docs(DOCUMENTS) {id_rubrique ?}  {id_article ?} {mode ?}{extension IN png,jpg,gif}{par num titre, date}{tout}>
 	#SET{documents, #GET{documents}|push{#ID_DOCUMENT}}
 </BOUCLE_docs>
 
