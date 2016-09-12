@@ -282,7 +282,8 @@ pre, code, samp, var, tt, .spip_code, .spip_cadre {
 	position: absolute;
 	font-size: 2em;
 	top: 50%;
-	padding:2px;
+	padding: 0 2px;
+	line-height: normal;
 }
 
 .rechts {
