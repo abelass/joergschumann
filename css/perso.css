@@ -286,6 +286,10 @@ pre, code, samp, var, tt, .spip_code, .spip_cadre {
 	line-height: normal;
 }
 
+.pfeil a{
+	color: #606060;
+}
+
 .rechts {
 	right: 0;
 }
