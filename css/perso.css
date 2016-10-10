@@ -287,7 +287,7 @@ pre, code, samp, var, tt, .spip_code, .spip_cadre {
 }
 
 .pfeil a{
-	color: #606060;
+	color: #e0cbe7;
 }
 
 .rechts {
@@ -301,6 +301,11 @@ pre, code, samp, var, tt, .spip_code, .spip_cadre {
 .bild {
 	position: relative;
 	float: right;
+}
+
+.bild img {
+	margin-left: 2.1em;
+	max-width: calc(100% - 4em);
 }
 
 table.evenements {
