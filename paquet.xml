@@ -1,7 +1,7 @@
 <paquet
 	prefix="joergschumann"
 	categorie="squelette"
-	version="1.1.0"
+	version="1.1.1"
 	etat="stable"
 	compatibilite="[3.0.17;3.1.*]"
 	logo="prive/themes/spip/images/joergschumann-64.png"
@@ -17,8 +17,8 @@
 	<necessite nom="agenda" compatibilite="[3.14.4;]" />
 	<necessite nom="typoenluminee" compatibilite="[3.4.3;]" />
 	<necessite nom="sjcycle" compatibilite="[2.3.0;]" />
-	<necessite nom="mailcrypt" compatibilite="[2.4.1;]" />	
-	<necessite nom="theme_maparaan" compatibilite="[1.0.2;]" />	
+	<necessite nom="mailcrypt" compatibilite="[2.4.1;]" />
+	<necessite nom="theme_maparaan" compatibilite="[1.0.2;]" />
 	<necessite nom="photospip" compatibilite="[1.0.3;]" />
 	<necessite nom="crayons" compatibilite="[1.20.0;]" />
 
