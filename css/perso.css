@@ -1,7 +1,7 @@
 /* --------------------------------------------------------------
 
-   style.css
-   Habillage distroy - romy.tetue.net - 2011
+	style.css
+	Habillage distroy - romy.tetue.net - 2011
 
 -------------------------------------------------------------- */
 @font-face {
@@ -101,11 +101,11 @@ h2 {
 }
 
 .surtitre {
-	
+
 }
 
 .soustitre {
-	
+
 }
 
 abbr.published {
@@ -140,7 +140,7 @@ abbr.published {
 }
 
 .texte {
-	
+
 }
 
 .hyperlien {
@@ -163,13 +163,17 @@ abbr.published {
 	text-align: center;
 	float: left
 }
+
+.cycle-slideshow {
+	margin: 1em 0;
+}
 /* Listes et tableaux */
 dl.spip dt {
 	background: url(img/def.png) no-repeat 25px .5em;
 }
 
 dl.spip dd {
-	
+
 }
 
 .agenda dd {
@@ -492,7 +496,7 @@ ul.choix_mots li label {
 
 /* Fomulaire de contact */
 .formulaire_ecrire_auteur {
-	
+
 }
 
 .formulaire_ecrire_auteur .saisie_sujet_message_auteur input.text {
@@ -504,7 +508,7 @@ ul.choix_mots li label {
 
 /* Habillage des forums */
 .comment-fil ul {
-	
+
 }
 
 .comment-meta {
@@ -536,7 +540,7 @@ ul.choix_mots li label {
 
 /* Formulaire de forum */
 .formulaire_forum {
-	
+
 }
 
 .formulaire_forum legend {
@@ -559,7 +563,7 @@ ul.choix_mots li label {
 /* Habillage des petitions
 ---------------------------------------------- */
 #signatures {
-	
+
 }
 
 #signatures td.signature-date small {
@@ -573,7 +577,7 @@ ul.choix_mots li label {
 
 /* Formulaire de signature */
 .formulaire_signature {
-	
+
 }
 
 /* ------------------------------------------
@@ -588,7 +592,7 @@ ul.choix_mots li label {
 }
 
 .menu p {
-	
+
 }
 
 .menu ul {
@@ -661,7 +665,7 @@ ul.choix_mots li label {
 }
 
 .menu_breves li {
-	
+
 }
 
 .menu_breves li h3 {
