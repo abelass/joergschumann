@@ -14,17 +14,17 @@
 	#SET{position_courante,#GET{doc_switched}|table_valeur{#ID_DOCUMENT}}
 	<BOUCLE_avant(DOCUMENTS){id_document = #GET{documents}|table_valeur{#GET{position_courante}|moins{1}}} {tout}>
 		<div class="pfeil links">
-			<a class="ajax" 
-				href="[(#SELF|parametre_url{id_document,#ID_DOCUMENT})]" 
+			<a class="ajax"
+				href="[(#SELF|parametre_url{id_document,#ID_DOCUMENT})]"
 				[ title="(#TITRE|attribut_html|couper{80})"]> < </a>
 		</div>
-	</BOUCLE_avant>	
+	</BOUCLE_avant>
 			[<a type="#MIME_TYPE" href="#URL_DOCUMENT">(#FICHIER|image_reduire{500,*})</a>]
-		
+
 	<BOUCLE_apres(DOCUMENTS){id_document = #GET{documents}|table_valeur{#GET{position_courante}|plus{1}}} {tout}>
 		<div class="pfeil rechts">
-			<a class="ajax" 
-				href="[(#SELF|parametre_url{id_document,#ID_DOCUMENT})]" 
+			<a class="ajax"
+				href="[(#SELF|parametre_url{id_document,#ID_DOCUMENT})]"
 				[ title="(#TITRE|attribut_html|couper{80})"]> > </a>
 		</div>
 	</BOUCLE_apres>
@@ -48,7 +48,7 @@
 		</li>
 		</BOUCLE_documents_portfolio>
 	</ul>
-	
+
 
 	[<p class="pagination">(#PAGINATION{precedent_suivant_symbole})</p>]
 	[<div class="legende">
@@ -62,7 +62,7 @@
 		#SET{image,#LOGO_DOCUMENT|image_passe_partout{60,60}|image_recadre{60,60}|inserer_attribut{class,spip_logos mouseover_visible}|inserer_attribut{alt,#TITRE|attribut_html|couper{80}}}
 		<li>
 			<h2>[(#TITRE|sinon{[(#FICHIER|basename|couper{80})]})]</h2>
-			<INCLURE{fond=modeles/audio,id=#ID_DOCUMENT}/>	<br/>				
+			<INCLURE{fond=modeles/audio,id=#ID_DOCUMENT}/>	<br/>
 		</li>
 	</BOUCLE_audio>
 <//B_documents_portfolio>
@@ -71,17 +71,19 @@
 
 <B_article_annees1>
 	<ul class="menu annee">
-	<BOUCLE_article_annees1(ARTICLES){id_rubrique}{!par date}{0,1}{doublons}>#SET{date,#DATE} #SET{annee,#DATE|annee}
+	<BOUCLE_article_annees1(ARTICLES){id_rubrique}{!par date}{0,1}{doublons}>
+	#SET{date,#DATE} #SET{annee,#DATE|annee} [(#GET{date}|setenv{date})]
 		<INCLURE{fond=inclure/inc-rubrique_galerie,titre_article=#TITRE,id_rubrique,id_article,env,annee=#GET{annee}}/>
-	</BOUCLE_article_annees1>			
+	</BOUCLE_article_annees1>
 	#SET{fin_menu_annee,</ul>}
-</B_article_annees1>	
-<B_article_annees2>	
-	<BOUCLE_article_annees2(ARTICLES){id_rubrique}{annee_relatif>0}{!par date}{0,1}{doublons}>#SET{date,#DATE}#SET{date,#DATE} #SET{annee,#DATE|annee}
+</B_article_annees1>
+<B_article_annees2>
+	<BOUCLE_article_annees2(ARTICLES){id_rubrique}{annee_relatif>0}{!par date}{0,1}{doublons}>
+	#SET{date,#DATE}#SET{date,#DATE} #SET{annee,#DATE|annee}
 		<INCLURE{fond=inclure/inc-rubrique_galerie,titre_article=#TITRE,id_rubrique,id_article,env,annee=#GET{annee}}/>
 		<BOUCLE_rec(BOUCLE_article_annees2)></BOUCLE_rec>
-	</BOUCLE_article_annees2>			
-</B_article_annees2>			
+	</BOUCLE_article_annees2>
+</B_article_annees2>
 
 #GET{fin_menu_annee}
 
@@ -100,7 +102,7 @@
 			|image_passe_partout{60,60}
 			|image_recadre{60,60}
 			|inserer_attribut{class,spip_logos mouseover_visible}
-			|inserer_attribut{alt,[(#TITRE|attribut_html|couper{80})]})]		
+			|inserer_attribut{alt,[(#TITRE|attribut_html|couper{80})]})]
 			</a>
 		</li>
 		]</BOUCLE_documents_portfolio2>
