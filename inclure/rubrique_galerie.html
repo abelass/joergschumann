@@ -8,66 +8,68 @@
 
 #SET{doc_switched, #GET{documents}|array_flip}
 
-	<B_afficher_document>
-	<div class="bild">
-	<BOUCLE_afficher_document(DOCUMENTS) {id_document}{extension IN png,jpg,gif}>
-	#SET{position_courante,#GET{doc_switched}|table_valeur{#ID_DOCUMENT}}
-	<BOUCLE_avant(DOCUMENTS){id_document = #GET{documents}|table_valeur{#GET{position_courante}|moins{1}}} {tout}>
-		<div class="pfeil links">
-			<a class="ajax"
-				href="[(#SELF|parametre_url{id_document,#ID_DOCUMENT})]"
-				[ title="(#TITRE|attribut_html|couper{80})"]> < </a>
-		</div>
-	</BOUCLE_avant>
-			[<a type="#MIME_TYPE" href="#URL_DOCUMENT">(#FICHIER|image_reduire{500,*})</a>]
+<div class="flexbox">
+	<B_documents_portfolio>
+	<div class="bloc clearfix" id="documents_galerie">
+		<ul>
+			<BOUCLE_documents_portfolio(DOCUMENTS) {id_rubrique ?} {mode ?}{extension IN png,jpg,gif} {par titre}{doublons}{tout}{pagination 9}>
+			<li[ class="(#EXPOSE)"]>
+				<a class="ajax" href="[(#SELF|parametre_url{id_document,#ID_DOCUMENT})]" [ title="(#TITRE|attribut_html|couper{80})"]>[(#FICHIER
+				|image_passe_partout{60,60}
+				|image_recadre{60,60}
+				|inserer_attribut{class,spip_logos}
+				|inserer_attribut{alt,[(#TITRE|attribut_html|couper{80})]})]
+				</a>
+			</li>
+			</BOUCLE_documents_portfolio>
+		</ul>
 
-	<BOUCLE_apres(DOCUMENTS){id_document = #GET{documents}|table_valeur{#GET{position_courante}|plus{1}}} {tout}>
-		<div class="pfeil rechts">
-			<a class="ajax"
-				href="[(#SELF|parametre_url{id_document,#ID_DOCUMENT})]"
-				[ title="(#TITRE|attribut_html|couper{80})"]> > </a>
+
+		[<p class="pagination">(#PAGINATION{precedent_suivant_symbole})</p>]
+		[<div class="legende">
+			<div class="titel">(#GET{titre})</div>
+			<div class="beschreibung">#GET{descriptif}</div>
+		</div>]
+	</div><!--#documents_portfolio-->
+	</B_documents_portfolio>
+		[(#REM)Audio]
+		<BOUCLE_audio(DOCUMENTS) {id_rubrique} {mode ?}{extension IN mp3} {par hasard}{doublons}{tout}>
+			#SET{image,#LOGO_DOCUMENT|image_passe_partout{60,60}|image_recadre{60,60}|inserer_attribut{class,spip_logos mouseover_visible}|inserer_attribut{alt,#TITRE|attribut_html|couper{80}}}
+			<li>
+				<h2>[(#TITRE|sinon{[(#FICHIER|basename|couper{80})]})]</h2>
+				<INCLURE{fond=modeles/audio,id=#ID_DOCUMENT}/>	<br/>
+			</li>
+		</BOUCLE_audio>
+	<//B_documents_portfolio>
+
+	<B_afficher_document>
+		<div class="bild">
+		<BOUCLE_afficher_document(DOCUMENTS) {id_document}{extension IN png,jpg,gif}>
+		#SET{position_courante,#GET{doc_switched}|table_valeur{#ID_DOCUMENT}}
+		<BOUCLE_avant(DOCUMENTS){id_document = #GET{documents}|table_valeur{#GET{position_courante}|moins{1}}} {tout}>
+			<div class="pfeil links">
+				<a class="ajax"
+					href="[(#SELF|parametre_url{id_document,#ID_DOCUMENT})]"
+					[ title="(#TITRE|attribut_html|couper{80})"]> < </a>
+			</div>
+		</BOUCLE_avant>
+				[<a type="#MIME_TYPE" href="#URL_DOCUMENT">(#FICHIER|image_reduire{500,*})</a>]
+
+		<BOUCLE_apres(DOCUMENTS){id_document = #GET{documents}|table_valeur{#GET{position_courante}|plus{1}}} {tout}>
+			<div class="pfeil rechts">
+				<a class="ajax"
+					href="[(#SELF|parametre_url{id_document,#ID_DOCUMENT})]"
+					[ title="(#TITRE|attribut_html|couper{80})"]> > </a>
+			</div>
+		</BOUCLE_apres>
+			#SET{titre,#TITRE}
+			#SET{descriptif,#DESCRIPTIF}
+		</BOUCLE_afficher_document>
 		</div>
-	</BOUCLE_apres>
-		#SET{titre,#TITRE}
-		#SET{descriptif,#DESCRIPTIF}
-	</BOUCLE_afficher_document>
-	</div>
 	</B_afficher_document>
 
-<B_documents_portfolio>
-<div class="bloc clearfix" id="documents_galerie">
-	<ul>
-		<BOUCLE_documents_portfolio(DOCUMENTS) {id_rubrique ?} {mode ?}{extension IN png,jpg,gif} {par titre}{doublons}{tout}{pagination 9}>
-		<li[ class="(#EXPOSE)"]>
-			<a class="ajax" href="[(#SELF|parametre_url{id_document,#ID_DOCUMENT})]" [ title="(#TITRE|attribut_html|couper{80})"]>[(#FICHIER
-			|image_passe_partout{60,60}
-			|image_recadre{60,60}
-			|inserer_attribut{class,spip_logos}
-			|inserer_attribut{alt,[(#TITRE|attribut_html|couper{80})]})]
-			</a>
-		</li>
-		</BOUCLE_documents_portfolio>
-	</ul>
-
-
-	[<p class="pagination">(#PAGINATION{precedent_suivant_symbole})</p>]
-	[<div class="legende">
-		<div class="titel">(#GET{titre})</div>
-		<div class="beschreibung">#GET{descriptif}</div>
-	</div>]
-</div><!--#documents_portfolio-->
-</B_documents_portfolio>
-	[(#REM)Audio]
-	<BOUCLE_audio(DOCUMENTS) {id_rubrique} {mode ?}{extension IN mp3} {par hasard}{doublons}{tout}>
-		#SET{image,#LOGO_DOCUMENT|image_passe_partout{60,60}|image_recadre{60,60}|inserer_attribut{class,spip_logos mouseover_visible}|inserer_attribut{alt,#TITRE|attribut_html|couper{80}}}
-		<li>
-			<h2>[(#TITRE|sinon{[(#FICHIER|basename|couper{80})]})]</h2>
-			<INCLURE{fond=modeles/audio,id=#ID_DOCUMENT}/>	<br/>
-		</li>
-	</BOUCLE_audio>
-<//B_documents_portfolio>
 #SET{annecourante,#DATE|annee}
-
+</div>
 
 <B_article_annees1>
 	<ul class="menu annee">

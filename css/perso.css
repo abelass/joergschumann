@@ -244,6 +244,11 @@ pre, code, samp, var, tt, .spip_code, .spip_cadre {
 	z-index: -1;
 }
 
+.flexbox {
+	display: flex;
+}
+
+
 #documents_galerie, #documents_album {
 	width: 200px;
 }
@@ -304,7 +309,6 @@ pre, code, samp, var, tt, .spip_code, .spip_cadre {
 
 .bild {
 	position: relative;
-	float: right;
 }
 
 .bild img {
@@ -731,8 +735,8 @@ a.on {
 	.aside {
 		padding-top: 1em
 	}
-	.bild {
-		float: none;
+	.flexbox {
+		display: block;
 	}
 	#documents_galerie, #documents_album {
 		width: 100%;
