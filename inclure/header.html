@@ -1,8 +1,0 @@
-<div class="clearfix header">
-	[(#ENV{home,'non'}|=={oui}|?{
-	<h1 id="logo" class="invisible">[(#LOGO_SITE_SPIP|image_reduire{40,*}) ]</h1>
-	,
-	<strong class="h1" id="logo"><a rel="start home" href="#URL_SITE_SPIP/" title="<:accueil_site:>">[(#LOGO_SITE_SPIP|image_reduire{400,*}) ]</a></strong>
-	})][<p id="slogan">(#SLOGAN_SITE_SPIP)</p>]
-	<h1 class="invisible">#NOM_SITE_SPIP</h1>
-</div>
