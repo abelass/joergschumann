@@ -3,4 +3,5 @@
 *.pyo
 .svn
 _svn
-
+/.project
+/.settings*
