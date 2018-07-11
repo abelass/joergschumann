@@ -1,0 +1,28 @@
+@import 'css/variables';
+@import 'css/perso_variables';
+
+/* Barre de Navigation*/
+
+#nav-menu {
+	a {
+		color : #fff;
+	}
+	a:hover {
+		color : $navbar-inverse-bg;
+	}
+}
+
+#nav {
+	.affix {
+		z-index : 200;
+		background-color : $navbar-inverse-bg;
+		width :100%;
+		left: 0;
+		.active {
+			background-color : $navbar-default-bg;
+			a {
+				color : $navbar-inverse-bg;
+			}
+		}
+	}
+}

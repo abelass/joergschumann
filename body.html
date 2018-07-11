@@ -1,10 +1,10 @@
-<body class="page[ (#ENV{type-page}|=={sommaire}|oui)sommaire]">
+<body class="page[ (#ENV{type-page}|=={sommaire}|oui)sommaire]" data-spy="scroll" data-target=".navbar-inner" data-offset="50">
 	<div>
 		<div class="container">
 			<div class="header" id="header">
-				[<div class="navbar navbar-inverse navbar-responsive" id="nav">
+				[<nav class="navbar navbar-inverse navbar-responsive" id="nav">
 					(#INCLURE{fond=inclure/nav,env}|navbar_responsive)
-				</div>]
+				</nav>]
 				<INCLURE{fond=header/#ENV{type-page},env} />
 			</div>
 			<div class="content" id="content">
