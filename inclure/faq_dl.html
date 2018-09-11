@@ -1,0 +1,14 @@
+<B_faq>
+<div class="faq">
+	<dl>
+<BOUCLE_faq(DATA){source table, #ENV{faq}}{par cle}>
+		<dt>
+			[<span>(#VALEUR|table_valeur{question})</span>]
+		</dt>
+		<dd>
+			[<span>(#VALEUR|table_valeur{reponse})</span>]
+		</dd>
+</BOUCLE_faq>
+	</dl>
+</div>
+</B_faq>

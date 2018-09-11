@@ -65,12 +65,16 @@
 
 
 
-<style>
-	@media (min-width: 1100px) {
-		#rubrique-1 .details {
-			background-image: url([(#CHEMIN{IMG/rubon1.jpg}
-			|image_reduire{750}
-			|extraire_attribut{src})]);
-		}
-	}
-</style>
+<script type="text/javascript">
+$(document).ready(function() {
+	$('.faq').on('click', 'dt', function(){
+		var question = $(this).text();
+		var answer = $(this).next('dd').text()
+		$('.faq').append('<div class="modal"><span class="close">x</span><dl><dt>' + question + '</dt>' + '<dd>' + answer + '</dd></dl>');
+	});
+	$('body').on('click', '.close', function(){
+		$('.modal').remove();
+	});
+});
+
+</script>
