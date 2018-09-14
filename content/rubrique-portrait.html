@@ -1,15 +1,11 @@
 <BOUCLE_content(RUBRIQUES){id_rubrique}{tout}{par num titre}>
 <div class="row">
-	<div class="span8">
-		<header class="cartouche">
-			<img src="#CHEMIN{images/mirror.png}" alt="Spiegel" />
-			[<div class="#EDIT{descriptif} slogan">(#DESCRIPTIF)</div>]
-			<h1 class="#EDIT{titre}">#TITRE</h1>
-		</header>
-		<div class="main">
-			[<div class="#EDIT{texte} texte">(#TEXTE)</div>]
-		</div>
-		</aside>
+	<header class="cartouche">
+		[<div class="#EDIT{descriptif} slogan">(#DESCRIPTIF)</div>]
+		<h1 class="#EDIT{titre}">#TITRE</h1>
+	</header>
+	<div class="main">
+		[<div class="#EDIT{texte} texte">(#TEXTE)</div>]
 	</div>
 </div>
 </BOUCLE_content>

@@ -1,6 +1,10 @@
 @import 'css/variables';
 @import 'css/perso_variables';
 
+body {
+	color: #6d7978
+}
+
 /* Header */
 
 #header {
@@ -9,6 +13,7 @@
 		background-size: cover;
 		min-height: 38.125em;
 		padding: 0;
+		border-bottom: none;
 }
 
 
@@ -37,7 +42,6 @@
 	}
 	padding-top: 0;
 	margin-bottom: 0;
-	font-family: 'open_sanssemibold';
 	text-transform: uppercase;
 	.affix {
 		top: 0;
@@ -91,6 +95,24 @@
 	}
 }
 
+/* Main section */
+#content {
+	margin: 0 auto;
+	float: none;
+}
+
+.container.main {
+	background-color: #dcd0c2;
+	.row {
+		margin: 3em 0;
+		background-color: rgba(255, 255, 255, 0.6);
+		padding: 4em 6em;
+	}
+}
+
+.row {
+
+}
 
 
 // Fragen.
