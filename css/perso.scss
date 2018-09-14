@@ -1,17 +1,18 @@
 @import 'css/variables';
 @import 'css/perso_variables';
 
-/* Barre de Navigation*/
+/* Header */
 
-#nav-menu {
-	a {
-		color : #8a7d86;
-	}
-	a:hover {
-		color : $navbar-inverse-bg;
-	}
+#header {
+		background: transparent url(images/banner.jpg) center 0 no-repeat scroll;
+		background-size: auto auto;
+		background-size: cover;
+		min-height: 38.125em;
+		padding: 0;
 }
 
+
+/* Barre de Navigation*/
 #nav {
 	.affix {
 		z-index : 200;
@@ -19,32 +20,21 @@
 		width :100%;
 		left: 0;
 		.active {
-			background-color : $navbar-default-bg;
+			background-color : transparent;
+			box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
 			a {
-				color : $navbar-inverse-bg;
+				color : #5f5b69;
 			}
 		}
 	}
 }
 
-// Navigation.
-
-
-
-.navbar-inverse {
+.navbar {
 	background-color: transparent;
 	border: none;
-	.nav{
-		> li.current > a {
-			color: #524860;
-		}
-		> li a {
-			text-shadow: none;
-		}
+	a {
+		color : #8a7d86;
 	}
-}
-
-.navbar {
 	padding-top: 0;
 	margin-bottom: 0;
 	font-family: 'open_sanssemibold';
@@ -55,6 +45,19 @@
 	}
 	.nav {
 		margin: 0 2.5em 0 0;
+
+		> li.current > a {
+			color: #524860;
+		}
+		> li a {
+			text-shadow: none;
+		}
+		li > a:hover, .nav > li > a:focus {
+				text-decoration: none;
+				background-color: transparent;
+				box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
+				color : #5f5b69;
+		}
 	}
 	.navbar-collapse{
 		padding: 0;
@@ -68,7 +71,8 @@
 		Padding: 0;
 	}
 	li {
-		background-color : $navbar-inverse-bg;
+		background-color : rgba(229, 226, 217, 0.9)
+
 	}
 
 	li:last-child {
@@ -87,13 +91,7 @@
 	}
 }
 
-/* Header */
-#header {
-		background: transparent url(images/banner.jpg) center 0 no-repeat scroll;
-				background-size: auto auto;
-		background-size: cover;
-		min-height: 38.125em;
-}
+
 
 // Fragen.
 section#rubrique-26 {
