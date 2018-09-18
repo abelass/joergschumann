@@ -7,5 +7,12 @@
 	<div class="main">
 		[<div class="#EDIT{texte} texte">(#TEXTE)</div>]
 	</div>
+	<aside class="right">
+		[(#LOGO_RUBRIQUE
+			|image_passe_partout{#ENV{width,165},#ENV{height,163}}
+			|image_recadre{#ENV{width,165},#ENV{height,163}}
+			|inserer_attribut{class,spip_logos}
+			|inserer_attribut{alt,[(#TITRE|attribut_html|couper{80})]})]
+	</aside>
 </div>
 </BOUCLE_content>

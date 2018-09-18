@@ -103,6 +103,9 @@ body {
 	}
 }
 
+#content section {
+	clear: both;
+}
 
 
 /* Main section */
@@ -119,8 +122,6 @@ body {
 		padding: 4em 6em;
 	}
 }
-
-
 
 
 // Fragen.
@@ -224,6 +225,30 @@ section#rubrique-26 {
 	}
 }
 
+// Fotogalerie
+section#rubrique-22 {
+	header .texte {
+		margin-bottom: 2.5em;
+		width: 65%;
+	}
+	.slick-prev::before, .slick-next::before {
+		font-size: 40px
+	}
+	.slick-prev, .slick-next {
+		width: 40px;
+		height: 40px;
+	}
+	.slick-next {
+		right: 0;
+		transform: translate(-5px, -50%);
+	}
+	.slick-prev {
+		left: 0;
+		z-index: 100;
+		transform: translate(5px, -50%);
+	}
+}
+
 // Responsive
 @media (min-width: 1300px) {
 	#header {
@@ -319,6 +344,14 @@ section#rubrique-26 {
 
 	header.accueil {
 		margin-top : 3em;
+	}
+
+	// Über mich.
+
+	.portrait {
+		aside {
+			margin-top: 3em;
+		}
 	}
 }
 
