@@ -9,14 +9,30 @@ body {
 /* Header */
 
 #header {
-		background: transparent url(images/banner.jpg) center 0 no-repeat scroll;
-		background-size: auto auto;
-		background-size: cover;
-		min-height: 38.125em;
-		padding: 0;
-		border-bottom: none;
+	background: transparent url(images/banner.jpg) center 0 no-repeat scroll;
+	background-size: auto auto;
+	background-size: cover;
+	min-height: 30em;
+	padding: 0;
+	border-bottom: none;
+
+	h1 {
+		font-size: 3em;
+		color: #ffffff;
+		line-height: 2em;
+	}
 }
 
+#logo_site_spip, #slogan_site_spip {
+	padding: 0.1em 0.3em;
+	background: rgba(0,0,0,0.6);
+}
+
+#slogan_site_spip {
+	display: block;
+	font-size: 1em;
+	color: #ffffff;
+}
 
 /* Barre de Navigation*/
 #nav {
@@ -87,14 +103,7 @@ body {
 	}
 }
 
-#logo_site_spip {
-	font-size:0;
-	text-align: center;
-	.spip_logos {
-		float: none;
-		margin: 0;
-	}
-}
+
 
 /* Main section */
 #content {
@@ -250,9 +259,7 @@ section#rubrique-26 {
 
 @media (max-width: 1200px) {
 
-	.span8 {
-		width: 980px;
-	}
+
 
 	#rubrique-1 .details {
 		background-position: 147% 50%;
@@ -303,10 +310,15 @@ section#rubrique-26 {
 }
 
 @media (min-width: 768px) {
+
 	.navbar-inner.affix {
 		background-color: #E6E6E4;
 		width: 100%!important;
 		left: 0!important;
+	}
+
+	header.accueil {
+		margin-top : 3em;
 	}
 }
 
