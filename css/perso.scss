@@ -113,7 +113,11 @@ body {
 		padding: 4em 6em;
 	}
 }
-
+section#rubrique-16{
+	.row{
+		margin-bottom:0;
+	}
+}
 // Start
 
 section#rubrique-20{
@@ -132,7 +136,7 @@ section#rubrique-20{
 
 	.row {
 		padding-top: 33em;
-		margin-top: -47px;
+		margin-top: 0;
 	}
 }
 
