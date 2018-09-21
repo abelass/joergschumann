@@ -123,6 +123,26 @@ body {
 	}
 }
 
+// Start
+
+section#rubrique-20{
+	.row::before {
+		content: " ";
+		background-image: url(images/streifen.jpg);
+		background-size: auto auto;
+		background-size: cover;
+		height: 30em;
+		width: 100vw;
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		top: 0px;
+	}
+
+	.row {
+		padding-top: 33em;
+	}
+}
 
 // Fragen.
 section#rubrique-26 {
