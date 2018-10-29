@@ -48,7 +48,7 @@ h1 {
 /* Barre de Navigation*/
 #nav {
 	.affix {
-		z-index : 200;
+		z-index : 500;
 		background-color : $navbar-inverse-bg;
 		width :100%;
 		left: 0;
@@ -273,11 +273,8 @@ section.galerie {
 	margin-left: 0;
 	margin-right: 0;
 }
-@media (min-width: 1200px) and (max-width: 1299px) {
-	#header {
-		background-position : 45% 60%;
-	}
-}
+
+
 @media (min-width: 1200px) {
 
 	#rubrique-2 .ps {
@@ -301,8 +298,6 @@ section.galerie {
 
 @media (max-width: 1200px) {
 
-
-
 	#rubrique-1 .details {
 		background-position: 147% 50%;
 	}
@@ -311,8 +306,6 @@ section.galerie {
 		padding: 2em 0.5em;
 	}
 }
-
-
 
 @media (max-width: 979px) {
 	.grid .item {
@@ -392,7 +385,6 @@ section.galerie {
 	section#rubrique-10{
 		background-image: url(images/bg8.jpg);
 	}
-
 
 	.navbar-inner.affix {
 		background-color: #E6E6E4;
