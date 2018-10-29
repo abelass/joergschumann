@@ -1,4 +1,5 @@
 <composition>
 	<nom>Rubrik Fotogalerie</nom>
 	<description>Inhalt der Rubrik Fotogalerie</description>
+	<branche type="article" composition="galerie" />
 </composition>

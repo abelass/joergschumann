@@ -6,11 +6,14 @@
 		[<div class="#EDIT{texte} texte">(#TEXTE)</div>]
 	</header>
 	</B_articles>
-	[<aside>
-		[(#REM) Gestion du portfolio et des documents ]
-		(#MODELE{slick, id_rubrique, largeur=*, hauteur=600})
-	</aside>]
-
+	<B_galeries>
+	<aside>
+	<BOUCLE_galeries(ARTICLES){id_rubrique}>
+		[(#REM) Galeries]
+		<INCLURE{fond=content/article-galerie,id_article,env} />
+	</BOUCLE_galeries>
+	</aside>
+	<B_galeries>
 	[<footer>
 	<div class="notes"><h2><:info_notes:></h2>(#NOTES)</div>
 	</footer>]

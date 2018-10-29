@@ -14,7 +14,7 @@
 }
 
 body {
-	color: #6d7978;
+	color: #557178;
 	background-color: #dcd0c2;
 }
 
@@ -23,6 +23,7 @@ body {
  */
 h1 {
 	font-family: moon_flower_bold;
+	color: #000000
 }
 
 /* Header */
@@ -261,10 +262,11 @@ section#rubrique-26 {
 }
 
 // Fotogalerie
-section#rubrique-22 {
-	header .texte {
-		margin-bottom: 2.5em;
-		width: 65%;
+section.galerie {
+	margin-bottom: 2.5em;
+
+	aside {
+		margin-bottom: 1em;
 	}
 	.slick-prev::before, .slick-next::before {
 		font-size: 40px

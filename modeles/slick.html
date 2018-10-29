@@ -24,14 +24,14 @@
 </BOUCLE_documents_slide>
 
 <B_main>
-<div id="slider-main">
+<div id="#ENV{id,slider}-main">
 <BOUCLE_main(DATA){source tableau,#GET{fichiers}}>
 	[<div>(#VALEUR|image_reduire{#GET{largeur},#GET{hauteur}})</div>]
 </BOUCLE_main>
 </div>
 </B_main>
 <B_nav>
-<div id="slider-nav">
+<div id="#ENV{id,slider}-nav">
 <BOUCLE_nav(DATA){source tableau,#GET{fichiers}}>
 	[<div>
 		(#VALEUR
@@ -44,7 +44,7 @@
 
 <script type="text/javascript">
 $(function () {
-	$('#slider-main').slick({
+	$('##ENV{id,slider}-main').slick({
 		lazyLoad: 'ondemand',
 		slidesToShow: 1,
 		slidesToScroll: 1,
@@ -52,14 +52,14 @@ $(function () {
 		fade: true,
 		centerMode: true,
 		centerPAdding: '50px',
-		asNavFor: '#slider-nav',
+		asNavFor: '##ENV{id,slider}-nav',
 		adaptiveHeight: true
 	});
-	$('#slider-nav').slick({
+	$('##ENV{id,slider}-nav').slick({
 		lazyLoad: 'ondemand',
 		slidesToShow: 4,
 		slidesToScroll: 1,
-		asNavFor: '#slider-main',
+		asNavFor: '##ENV{id,slider}-main',
 		dots: false,
 		centerMode: true,
 		focusOnSelect: true,
