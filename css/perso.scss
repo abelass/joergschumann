@@ -1,9 +1,28 @@
 @import 'css/variables';
 @import 'css/perso_variables';
 
+/**
+ * Fonts
+ */
+
+@font-face {
+		font-family: 'moon_flower_bold';
+		src: url('fonts/moonflower/moon_flower_bold-webfont.woff2') format('woff2'),
+				url('fonts/moonflower/moon_flower_bold-webfont.woff') format('woff');
+		font-weight: normal;
+		font-style: normal;
+}
+
 body {
 	color: #6d7978;
 	background-color: #dcd0c2;
+}
+
+/*
+ *Titres
+ */
+h1 {
+	font-family: moon_flower_bold;
 }
 
 /* Header */
