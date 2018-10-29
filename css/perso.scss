@@ -114,57 +114,41 @@ h1 {
 	}
 }
 
-#content section {
+.container > .content section {
 	clear: both;
 }
 
 
 /* Main section */
-#content {
+.container > .content {
 	margin: 0 auto;
 	float: none;
 }
 
 .container.main {
-	background-color: #dcd0c2;
 	.row {
 		margin: 3em 0;
-		background-color: rgba(255, 255, 255, 0.6);
+		background-color: rgba(255, 255, 255, 0.8);
 		padding: 4em 6em;
 	}
 }
+
+
+
 section#rubrique-16{
 	.row{
 		margin-bottom:0;
 	}
 }
-// Start
 
-section#rubrique-20{
-	.row::before {
-		content: " ";
-		background-image: url(images/streifen.jpg);
-		background-size: auto auto;
-		background-size: cover;
-		height: 30em;
-		width: 100vw;
-		position: absolute;
-		left: 50%;
-		transform: translateX(-50%);
-		top: 0px;
-	}
-
-	.row {
-		padding-top: 33em;
-		margin-top: 0;
-	}
-}
 
 // Fragen.
 section#rubrique-26 {
-	background-color: #492d43;
 	padding-top: 3.125em;
 	padding-bottom: 9.375em;
+	.span8 {
+		background-color: #492d43;
+	}
 	h1 {
 		text-align: left;
 		color: white;
@@ -263,7 +247,6 @@ section#rubrique-26 {
 
 // Fotogalerie
 section.galerie {
-	margin-bottom: 2.5em;
 
 	aside {
 		margin-bottom: 1em;
@@ -286,7 +269,10 @@ section.galerie {
 	}
 }
 
-
+.row{
+	margin-left: 0;
+	margin-right: 0;
+}
 @media (min-width: 1200px) and (max-width: 1299px) {
 	#header {
 		background-position : 45% 60%;
@@ -334,12 +320,13 @@ section.galerie {
 		margin-left: 1em;
 	}
 
-	#content > section, section#rubrique-7, .end {
+	.container > .content > section, section#rubrique-7, .end {
 		padding: 4em 0 0 ;
 		.row > .span8 {
 			width: 98%;
 		}
 	}
+
 
 	#rubrique-1 {
 		.details {
@@ -366,6 +353,46 @@ section.galerie {
 }
 
 @media (min-width: 768px) {
+
+	section.principale {
+		background-position: center 0;
+		background-attachment: scroll;
+		background-size: cover;
+	}
+
+
+	section#rubrique-16{
+		background-image: url(images/bg1.jpg);
+	}
+
+	section#rubrique-20{
+		background-image: url(images/bg2.jpg);
+	}
+
+	section#rubrique-24{
+		background-image: url(images/bg3.jpg);
+	}
+
+	section#rubrique-23{
+		background-image: url(images/bg4.jpg);
+	}
+
+	section#rubrique-22{
+		background-image: url(images/bg5.jpg);
+	}
+
+	section#rubrique-26{
+		background-image: url(images/bg6.jpg);
+	}
+
+	section#rubrique-25{
+		background-image: url(images/bg7.jpg);
+	}
+
+	section#rubrique-10{
+		background-image: url(images/bg8.jpg);
+	}
+
 
 	.navbar-inner.affix {
 		background-color: #E6E6E4;
@@ -395,7 +422,7 @@ section.galerie {
 	h1#logo_site_spip {
 		width: 100%!important;
 	}
-	#content > section header {
+	.container > .content > section header {
 		text-align: left;
 		.texte {
 			width: 100%;
@@ -482,7 +509,7 @@ section.galerie {
 			display:none;
 		}
 	}
-	#content .end {
+	.end {
 		padding: 0;
 	}
 
@@ -510,26 +537,6 @@ section.galerie {
 			}
 		}
 	}
-
-	section#rubrique-7 {
-		padding-top: 2em;
-		margin-top: 2em;
-		.carte_gis {
-			margin-top: 3em;
-		}
-		.newsletter {
-			.formulaire_spip {
-				.editer-groupe {
-					width: 100%;
-					float: none;
-				}
-				.boutons {
-					width: auto;
-					float: none;
-				}
-			}
-		}
-	}
 }
 
 @media (max-width: 414px) {
@@ -539,42 +546,10 @@ section.galerie {
 	h2 {
 		line-height: 1em;
 	}
-	#content > section header .texte {
+	.container > .content > section header .texte {
 		width: 100%;
 		strong {
 			font-size: 2em;
-		}
-	}
-	#rubrique-4 {
-		.main {
-			.texte {
-				ul, > p  {
-					width: 100%;
-					float: none;
-				}
-			}
-		}
-	}
-	section#rubrique-5 {
-		.faq {
-			dl {
-				dt {
-					font-size: 1.3em;
-					span {
-						padding: 1em 0.5em;
-					}
-				}
-			}
-		}
-	}
-	#rubrique-6 {
-		.main .texte {
-			-moz-column-count: 1;
-			-webkit-column-count: 1;
-			column-count: 1;
-			-webkit-column-gap: 0;
-			-moz-column-gap: 0;
-			column-gap: 0;
 		}
 	}
 }

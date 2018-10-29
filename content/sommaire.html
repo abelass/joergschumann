@@ -1,7 +1,11 @@
 <BOUCLE_content(RUBRIQUES){branche}{tout}{par num titre}>
 [(#COMPOSITION|=={kontakt}|oui)<div class="end">]
 <section class="[(#COMPOSITION|sinon{rubrique})] principale" id="rubrique-#ID_RUBRIQUE">
-	<INCLURE{fond=content/rubrique, id_rubrique, composition, env} />
+	<div class="container main">
+		<div class="content col-md-10">
+			<INCLURE{fond=content/rubrique, id_rubrique, composition, env} />
+		</div>
+	</div>
 </section>
 </BOUCLE_content>
 	<div class="row">
