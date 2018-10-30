@@ -424,10 +424,13 @@ section.galerie {
 		padding: 2em;
 		min-height: auto;
 	}
-
+	.navbar-responsive {
+		z-index: 500;
+	}
 	.navbar-responsive.navbar-inverse .navbar-inner .nav-collapse {
 		background-color: #E6E6E4;
 		text-align: right;
+		padding: 0 1em;
 	}
 	.navbar .btn-navbar {
 		background-color: #E6E6E4;
