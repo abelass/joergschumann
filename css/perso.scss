@@ -16,6 +16,7 @@
 body {
 	color: #557178;
 	background-color: #dcd0c2;
+
 }
 
 /*
@@ -43,7 +44,10 @@ h1 {
 	}
 }
 
-
+div, p, dt, dd, span {
+	overflow-wrap: break-word;
+	hyphens: auto;
+}
 
 /* Barre de Navigation*/
 #nav {
@@ -425,7 +429,7 @@ section.galerie {
 		min-height: auto;
 	}
 	.navbar-responsive {
-		z-index: 500;
+		z-index: 1100;
 	}
 	.navbar-responsive.navbar-inverse .navbar-inner .nav-collapse {
 		background-color: #E6E6E4;
@@ -520,5 +524,9 @@ section.galerie {
 		strong {
 			font-size: 2em;
 		}
+	}
+	section#rubrique-26 .faq dl dt {
+		font-size: 1.2em;
+
 	}
 }
