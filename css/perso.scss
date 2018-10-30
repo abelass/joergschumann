@@ -136,11 +136,11 @@ h1 {
 
 // Fragen.
 section#rubrique-26 {
-	padding-top: 3.125em;
-	padding-bottom: 9.375em;
-	.span8 {
+	.row {
 		background-color: #492d43;
+		padding: 0;
 	}
+
 	h1 {
 		text-align: left;
 		color: white;
@@ -216,17 +216,18 @@ section#rubrique-26 {
 				font-weight: normal;
 				opacity: 1;
 				float: none;
-				font-family: open_sanslight;
 			}
 			dl {
 				padding: 0 2.5em;
 				display: block;
 			}
 			dt {
-				text-align: left
+				text-align: left;
+				width: 100%;
 			}
 			dt:nth-of-type(1) {
-				width: 100%
+				width: 100%;
+				background-color: #c6d5e2;
 			}
 			dd {
 				display: block;
@@ -237,12 +238,22 @@ section#rubrique-26 {
 	}
 }
 
+// Therapìen
+#rubrique-23 {
+	margin-top : 2em;
+}
+
 // Fotogalerie
 section.galerie {
 
 	aside {
 		margin-bottom: 1em;
 	}
+	.slick-list {
+		margin-top: 1em
+	}
+
+
 	.slick-prev::before, .slick-next::before {
 		font-size: 40px
 	}
@@ -282,20 +293,16 @@ section.galerie {
 	}
 }
 
-@media (max-width: 1300px) {
-	#rubrique-1 .details {
-		background-position: 160% 50%;
-	}
-}
 
 @media (max-width: 1200px) {
-
-	#rubrique-1 .details {
-		background-position: 147% 50%;
-	}
-
-	section#rubrique-5 .faq dl dt span, section#rubrique-5 .faq dl dd span {
+	section#rubrique-26 .faq dl dt span, section#rubrique-26 .faq dl dd span {
 		padding: 2em 0.5em;
+	}
+}
+@media (min-width: 979px) {
+	section#rubrique-26 {
+		padding-top: 3.125em;
+		padding-bottom: 9.375em;
 	}
 }
 
@@ -305,15 +312,12 @@ section.galerie {
 		margin-left: 1em;
 	}
 
-	.container > .content > section, section#rubrique-7, .end {
+	.container > .content > section, section#rubrique-10, .end {
 		padding: 4em 0 0 ;
-		.row > .span8 {
-			width: 98%;
-		}
 	}
 
 
-	#rubrique-1 {
+	#rubrique-16 {
 		.details {
 			background-image: none;
 			article {
@@ -325,15 +329,6 @@ section.galerie {
 	section#rubrique-2 {
 		padding-bottom: 0;
 		padding-top: 0;
-		.slogan {
-			margin-bottom: 0;
-			padding-bottom: 4em;
-			font-size: 2em;
-		}
-		.ps {
-			font-size: 2em;
-			margin-top: 12%;
-		}
 	}
 }
 
@@ -344,7 +339,6 @@ section.galerie {
 		background-attachment: scroll;
 		background-size: cover;
 	}
-
 
 	section#rubrique-16{
 		background-image: url(images/bg1.jpg);
@@ -406,6 +400,12 @@ section.galerie {
 	h1#logo_site_spip {
 		width: 100%!important;
 	}
+
+	.container.main .row{
+		padding : 2em 3em;
+		margin: 1.5em 0;
+	}
+
 	.container > .content > section header {
 		text-align: left;
 		.texte {
@@ -432,7 +432,9 @@ section.galerie {
 	.navbar-inverse .btn-navbar[disabled] {
 		background-color: #E6E6E4;
 	}
-	#rubrique-1 {
+
+	// Start
+	#rubrique-16 {
 		.details {
 			margin: 0;
 			padding: 2em;
@@ -441,63 +443,24 @@ section.galerie {
 			}
 		}
 	}
-	section#rubrique-2 {
-		background: none;
-		.pied {
-			background: none;
-			display: none;
+
+	// Angebot
+	section#rubrique-24 {
+		.col-sm-6 {
+			padding-left: inherit;
+			padding-right: inherit;
 		}
-		.slogan {
-			display: none;
-		}
-		.ps {
-			display: none;
-		}
-	.span8 .span6:last-child article {
-		padding-left: 0;
-}
-	}
-	#rubrique-3{
-	.angebot {
-		margin-bottom: 2em;
-	}
-	.ps {
-			margin-top: 0;
-			margin-bottom: 4em;
-		}
-	}
-	section#rubrique-4 {
 		header {
 			text-align: center;
 		}
-		.main {
-			.texte {
-				align-items: flex-start;
-				p:nth-of-type(1) {
-				order: 1;
-				margin: 0 auto;
-				}
-				ul {
-					order: 2;
-					width: 100%;
-				}
-				p:nth-of-type(2) {
-					order: 3;
-				}
-				p:nth-of-type(3) {
-					order: 4;
-				}
-			}
-		}
-		.items {
-			display:none;
-		}
 	}
+
 	.end {
 		padding: 0;
 	}
 
-	section#rubrique-5 {
+// FAQ
+	section#rubrique-26 {
 		.faq {
 			dl {
 				dt,
@@ -523,12 +486,18 @@ section.galerie {
 	}
 }
 
+
+
 @media (max-width: 414px) {
 	h1, .h1, .h1-like {
 		font-size: 2em;
 	}
 	h2 {
 		line-height: 1em;
+	}
+
+	.container.main .row{
+		padding : 1em 1.5em;
 	}
 	.container > .content > section header .texte {
 		width: 100%;
