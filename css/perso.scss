@@ -331,7 +331,15 @@ section.galerie {
 		padding-top: 0;
 	}
 }
-
+@media (max-width: 768px) {
+	#header {
+		background-image:  url(images/logo.png);
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: contain;
+		height: 120px;
+	}
+}
 @media (min-width: 768px) {
 
 	section.principale {
@@ -489,13 +497,18 @@ section.galerie {
 
 
 @media (max-width: 414px) {
+
+
 	h1, .h1, .h1-like {
 		font-size: 2em;
 	}
 	h2 {
 		line-height: 1em;
 	}
+	#header {
 
+		height: 90px;
+	}
 	.container.main .row{
 		padding : 1em 1.5em;
 	}
