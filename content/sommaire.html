@@ -1,5 +1,5 @@
 <BOUCLE_content(RUBRIQUES){branche}{tout}{par num titre}>
-[(#COMPOSITION|=={kontakt}|oui)<div class="end">]
+
 <section class="[(#COMPOSITION|sinon{rubrique})] principale" id="rubrique-#ID_RUBRIQUE">
 	<div class="container main">
 		<div class="content col-md-10">
@@ -8,12 +8,12 @@
 	</div>
 </section>
 </BOUCLE_content>
-	<div class="container main">
-		<div class="content col-md-10">	<div class="row">
-		<div class="footer" id="footer">
-			<INCLURE{fond=footer/#ENV{type-page},env} />
-		</div>
-	</div>
+<div class="container main">
+	<div class="content col-md-10">
+		<div class="row">
+			<div class="footer" id="footer">
+					<INCLURE{fond=footer/#ENV{type-page},env} />
+			</div>
 		</div>
 	</div>
 </div>
