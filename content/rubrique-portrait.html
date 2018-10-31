@@ -1,16 +1,16 @@
-<BOUCLE_content(RUBRIQUES){id_rubrique}{tout}{par num titre}>
-<div class="row">
-	<header class="cartouche">
-		[<div class="#EDIT{descriptif} slogan">(#DESCRIPTIF)</div>]
-		<h1 class="#EDIT{titre}">#TITRE</h1>
-	</header>
-	<div class="main">
-		[<div class="#EDIT{texte} texte">(#TEXTE)
-		[(#LOGO_RUBRIQUE
-			|image_passe_partout{#ENV{width,165},#ENV{height,163}}
-			|image_recadre{#ENV{width,165},#ENV{height,163}}
-			|inserer_attribut{class,spip_logos right}
-			|inserer_attribut{alt, Jörg Schumann})]</div>]
-	</div>
-</div>
-</BOUCLE_content>
+		<BOUCLE_content(RUBRIQUES){id_rubrique}{tout}{par num titre}>
+		<div class="row">
+			<header class="cartouche">
+				[<div class="#EDIT{descriptif} slogan">(#DESCRIPTIF)</div>]
+				<h1 class="#EDIT{titre}">#TITRE</h1>
+			</header>
+			<div class="main">
+				[<div class="#EDIT{texte} texte">(#TEXTE)
+				[(#LOGO_RUBRIQUE
+					|image_passe_partout{#ENV{width,165},#ENV{height,163}}
+					|image_recadre{#ENV{width,165},#ENV{height,163}}
+					|inserer_attribut{class,spip_logos right}
+					|inserer_attribut{alt, Jörg Schumann})]</div>]
+			</div>
+		</div>
+		</BOUCLE_content>

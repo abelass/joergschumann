@@ -1,31 +1,31 @@
-<BOUCLE_content(RUBRIQUES){id_rubrique}{tout}{par num titre}>
-<article>
-	<div class="row">
-		<header class="cartouche">
-			<h1 class="#EDIT{titre}">#TITRE</h1>
-
-			[(#LOGO_RUBRIQUE|image_reduire{460})]
-		</header>
-		<div class="main">
-			[<div class="#EDIT{texte} texte">(#TEXTE)</div>]
-		</div>
-	</div>
-	<aside>
-		<div class="row">
-			[<div class="#EDIT{descriptif} descriptif">(#DESCRIPTIF)</div>]
-		</div>
-	</aside>
-</article>
-
-	<B_articles>
-	<aside class="detail main d-sm-flex justify-content-between flex-wrap">
-	<BOUCLE_articles(ARTICLES){id_rubrique}>
-		<div class="col-sm-6[ (#COMPOSITION|sinon{article})]">
+		<BOUCLE_content(RUBRIQUES){id_rubrique}{tout}{par num titre}>
+		<article>
 			<div class="row">
-				<INCLURE{fond=content/article, id_article, composition=#COMPOSITION, type-page=article, env} />
+				<header class="cartouche">
+					<h1 class="#EDIT{titre}">#TITRE</h1>
+
+					[(#LOGO_RUBRIQUE|image_reduire{460})]
+				</header>
+				<div class="main">
+					[<div class="#EDIT{texte} texte">(#TEXTE)</div>]
+				</div>
 			</div>
-		</div>
-		</BOUCLE_articles>
-	</aside>
-	</B_articles>
-</BOUCLE_content>
+			<aside>
+				<div class="row">
+					[<div class="#EDIT{descriptif} descriptif">(#DESCRIPTIF)</div>]
+				</div>
+			</aside>
+		</article>
+
+			<B_articles>
+			<aside class="detail main d-sm-flex justify-content-between flex-wrap">
+			<BOUCLE_articles(ARTICLES){id_rubrique}>
+				<div class="col-sm-6[ (#COMPOSITION|sinon{article})]">
+					<div class="row">
+						<INCLURE{fond=content/article, id_article, composition=#COMPOSITION, type-page=article, env} />
+					</div>
+				</div>
+				</BOUCLE_articles>
+			</aside>
+			</B_articles>
+		</BOUCLE_content>
