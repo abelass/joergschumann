@@ -358,6 +358,11 @@ section.galerie {
 
 	section#rubrique-20{
 		background-image: url(images/bg2.jpg);
+		.texte {
+			p:last-of-type {
+				float: left;
+			}
+		}
 	}
 
 	section#rubrique-24{
