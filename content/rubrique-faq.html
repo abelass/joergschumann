@@ -1,27 +1,14 @@
-<BOUCLE_content(RUBRIQUES){id_rubrique}{tout}{par num titre}>
-	<div class="row">
-		<div class="wrapper">
-			<header class="cartouche">
-				[<div class="#EDIT{descriptif} slogan">(#DESCRIPTIF)</div>]
-				<h1 class="#EDIT{titre}">#TITRE</h1>
-				[(#LOGO_RUBRIQUE|image_reduire{460})]
-			</header>
-			<div class="main">
-				[<div class="#EDIT{texte} texte">(#TEXTE)</div>]
-			</div>
-			<B_articles>
-			<div class="row-fluid">
-			<BOUCLE_articles(ARTICLES){id_rubrique}>
-				<div class="[ (#COMPOSITION|sinon{article})]">
-					<INCLURE{fond=content/article, id_article, composition=#COMPOSITION, type-page=article, env} />
-				</div>
-			</BOUCLE_articles>
-			</div>
-			</B_articles>
-			[<aside>
-				[(#REM) Gestion du portfolio et des documents ]
-				(#INCLURE{fond=inclure/documents,id_rubrique})
-			</aside>]
-		</div>
-	</div>
-</BOUCLE_content>
+		<BOUCLE_content(RUBRIQUES){id_rubrique}{tout}{par num titre}>
+			<div class="row">
+				<div class="wrapper">
+					<header class="cartouche">
+						[<div class="#EDIT{descriptif} slogan">(#DESCRIPTIF)</div>]
+						<h1 class="#EDIT{titre}">#TITRE</h1>
+						[(#LOGO_RUBRIQUE|image_reduire{460})]
+					</header>
+					<div class="main">
+						[<div class="#EDIT{texte} texte">(#TEXTE)</div><!-- fin texte -->]
+					</div><!-- fin main -->
+				</div><!-- fin wrapper -->
+			</div><!-- fin row -->
+		</BOUCLE_content>
