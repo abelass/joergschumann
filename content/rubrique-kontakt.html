@@ -3,8 +3,8 @@
 	<div class="span8">
 		<div class="main">
 			[<div class="#EDIT{texte} texte">(#TEXTE)</div>]
-			<div class="row-fluid">
-				<div class="span4">
+			<div class="d-sm-flex justify-content-between flex-wrap">
+				<div class="col-sm-4">
 				<header class="cartouche">
 					[<div class="#EDIT{descriptif} slogan">(#DESCRIPTIF)</div>]
 					<h1 class="#EDIT{titre}">#TITRE</h1>
@@ -17,7 +17,7 @@
 					[<p class="telephone">(#TELEPHONE)</p>]
 					<p class="email">[(#VAL{<a href="mailto:#EMAIL_WEBMASTER">#EMAIL_WEBMASTER</a>}|mailcrypt)]</p>
 				</div>
-				<div class="span8">
+				<div class="col-sm-8">
 					<INCLURE{fond=modeles/carte_gis,autocenterandzoom=oui,zoom=18,id_rubrique,objets=rubriques}/>
 				</div>
 			</div>

@@ -137,8 +137,12 @@ div, p, dt, dd, span {
 	}
 }
 
-// Zitate
+.row{
+	margin-left: 0;
+	margin-right: 0;
+}
 
+// Zitate
 section.zitate {
 	color: #6eb5f8;
 	h2 {
@@ -280,10 +284,9 @@ section.galerie {
 	}
 }
 
-.row{
-	margin-left: 0;
-	margin-right: 0;
-}
+
+
+
 
 
 @media (min-width: 1200px) {
@@ -412,6 +415,12 @@ section.galerie {
 	}
 }
 
+// Kontakt
+section.kontakt {
+	p {
+		margin-bottom: 0;
+	}
+}
 @media (max-width: 767px) {
 	.grid .item {
 		width: 100%;
