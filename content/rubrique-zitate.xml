@@ -1,0 +1,5 @@
+<composition>
+	<nom>Rubrik Zitate</nom>
+	<description>Inhalt der Rubrik Zitate</description>
+	<branche type="article" composition="zitate" />
+</composition>

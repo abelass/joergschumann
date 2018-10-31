@@ -137,7 +137,13 @@ div, p, dt, dd, span {
 	}
 }
 
+// Zitate
 
+section.zitate {
+	.container.main .row {
+		background-color: inherit;
+	}
+}
 // Fragen.
 section#rubrique-26 {
 	.wrapper {
@@ -239,11 +245,6 @@ section#rubrique-26 {
 			}
 		}
 	}
-}
-
-// Therapìen
-#rubrique-23 {
-	margin-top : 2em;
 }
 
 // Fotogalerie
