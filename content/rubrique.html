@@ -11,7 +11,7 @@
 	<B_articles>
 	<div class="row-fluid">
 	<BOUCLE_articles(ARTICLES){id_rubrique}>
-		<div class="span6[ (#COMPOSITION|sinon{article})]">
+		<div class="col-md-6[ (#COMPOSITION|sinon{article})]">
 			<INCLURE{fond=content/article, id_article, composition=#COMPOSITION, type-page=article, env} />
 		</div>
 	</BOUCLE_articles>
