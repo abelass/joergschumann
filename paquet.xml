@@ -1,8 +1,8 @@
 <paquet
 	prefix="joergschumann"
 	categorie="squelette"
-	version="3.0.13"
-	etat="dev"
+	version="3.0.14"
+	etat="test"
 	compatibilite="[3.0.17;3.2.*]"
 	logo="prive/themes/spip/images/joergschumann-64.png"
 	documentation=""
